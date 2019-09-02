@@ -108,7 +108,8 @@ public class OracleSnapshotChangeEventSource extends HistorizedRelationalSnapsho
 
     @Override
     protected void determineSnapshotOffset(SnapshotContext ctx) throws Exception {
-        Optional<Long> latestTableDdlScn = getLatestTableDdlScn(ctx);
+        //Optional<Long> latestTableDdlScn = getLatestTableDdlScn(ctx);
+        Optional<Long> latestTableDdlScn = Optional.empty();
         long currentScn;
 
         // we must use an SCN for taking the snapshot that represents a later timestamp than the latest DDL change than
