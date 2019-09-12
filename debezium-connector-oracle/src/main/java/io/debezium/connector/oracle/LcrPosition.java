@@ -33,7 +33,7 @@ public class LcrPosition implements Comparable<LcrPosition> {
         this.rawPosition = rawPosition;
         this.stringFromat = HexConverter.convertToHexString(rawPosition);
         try {
-            scn = XStreamUtility.getSCNFromPosition(rawPosition).longValue();
+            scn = OracleXStreamUtility.getSCNFromPosition(rawPosition).longValue();
         }
         catch (SQLException | StreamsException e) {
             throw new RuntimeException(e);
